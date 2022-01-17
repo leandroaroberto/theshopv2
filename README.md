@@ -26,9 +26,11 @@ This MVP contains the models below:
 -   p7.4-xml
 -   php7.4-curl
 -   php7.4-mysql
+-   php7.4-sqlite3
 -   composer
 -   node >= 16.13.x
 -   npm >= 8.1
+-   sqlite (for testing purposes)
 -   git
 
 ## Install
@@ -58,6 +60,24 @@ php artisan db:seed
 Run npm install from **frontend** folder
 
 npm install
+
+## Testing
+
+# Backend (PHP)
+
+migrate the testing_database:
+
+php artisan migrate --env=testing
+
+Run tests:
+
+php artisan test
+
+# Frontend (React)
+
+cd frontend and then run tests:
+
+npm test
 
 ## Running the application
 
