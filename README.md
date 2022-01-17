@@ -1,4 +1,4 @@
-# TheShop
+# The Shop v2
 
 <small>By Leandro A. Roberto</small>
 
