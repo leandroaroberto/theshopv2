@@ -18,62 +18,33 @@ class ProdutoTest extends TestCase
      *
      * @return void
      */
-    //public function testShouldShowAllProducts(){        
-        // $this->get('/api/products', [])
-        //     ->assertStatus(200)
-        //     ->assertJson([
-        //         0 => [                    
-        //             'id' => 1,
-        //             'name' => 'Francês',
-        //             'category' => 1,
-        //             'status' => 1
-
-        //         ],
-        //         2 => [
-        //             'id' => 3, 
-        //             "description" => "Pão Caseirinho",                                        
-        //         ],
-        //         7 => [
-        //             'id' => 8, 
-        //             'name' => 'Broa Tradicional',                    
-        //             'category' => 3
-        //         ],
-        //         8 => [
-        //             'id' => 9,                                        
-        //             'prices' => [
-        //                 0 => [
-        //                     'price' => '3.00'
-        //                 ]
-        //             ]
-        //         ]
-        //     ]); 
-            
-        //     Product::where('status',1)->update(['status' => 0]);
-        //     $this->get('/api/products', [])
-        //         ->assertStatus(400);
-    //}
+    public function testShouldShowAllProducts(){                
+        Produto::factory()->count(3)->create();
+        
+        $this->get('/api/products/', [])
+            ->assertStatus(200)
+            ->assertJsonCount(3, $key = null);
+    }
 
      /**
      * Assert showing a specific product.
      *
      * @return void
      */
-    public function testShouldShowAProduct(){
-        // $this->get('/api/products/1', [])
-        //     ->assertStatus(200)
-        //     ->assertJson([                                   
-        //         'id' => 1,
-        //         'name' => 'Francês',
-        //         'category' => 1,
-        //         'status' => 1,
-        //         'prices' => [
-        //             0 => [
-        //                 'price' => '1.00'
-        //             ]
-        //         ]
-        //     ]);
-
+    public function testShouldShowAProduct(){                               
         $this->get('/api/products/abc999', [])
-            ->assertStatus(404);            
+            ->assertStatus(404);    
+            
+            
+        // $response->assertJsonStructure([
+        //     'user' => [
+        //         '*' => [
+        //             'name',
+        //             'age',
+        //             'location'
+        //         ]
+        //     ]
+        // ]);
+
     }
 }

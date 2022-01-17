@@ -15,10 +15,12 @@ class ProdutoFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $faker->name,
-            'caracteristicas' => $faker->text,
-            'qtde' => $faker->optional()->randomDigit,
-            'preco' => $faker->randomNumber(2)
+            'nome' => $this->faker->name,
+            'caracteristicas' => $this->faker->text,
+            'qtde' => $this->faker->randomDigit,
+            'preco' => $this->faker->randomFloat(2, 1, 200),            
+            'created_at' => now()
         ];
+
     }
 }
