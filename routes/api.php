@@ -22,3 +22,4 @@ use App\Http\Controllers\ProdutoController;
 //Products
 Route::get('/products/{id}', [ProdutoController::class, 'produtoInfo']);
 Route::get('/products', [ProdutoController::class, 'index']);
+Route::post('/products/search', [ProdutoController::class, 'buscarProdutos']);
