@@ -8,7 +8,7 @@ const Header = ({lang}) => {
             <h1>{lang == 'BR' ? 'Encontre seu produto' : 'Find your product'}</h1>
             <input type="text"/>
           </div>
-          <img src="https://traversymedia.com/images/grid.svg" alt="" />
+          <img src="header/shopCart.png" alt="" />
         </div>        
       </header>
     )

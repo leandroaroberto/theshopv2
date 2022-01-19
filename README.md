@@ -98,3 +98,7 @@ The Shop V2 uses the same structure as first version.
 <p align="center">
 <img src="https://github.com/leandroqa/theshop/blob/master/docs/EstruturaBancoDados.png" alt="Banco de dados">
 </p>
+
+## Screenshots
+
+<img src="https://github.com/leandroqa/theshopv2/blob/master/docs/screenShots/indexPagePTBR.png" alt="Index page PTBR">
