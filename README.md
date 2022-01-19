@@ -2,6 +2,8 @@
 
 <small>By Leandro A. Roberto</small>
 
+#### Under development
+
 This version 2 of the original The shop uses ReactJS as frontend and PHP with Laravel 8 as backend. The original Auth part was totally rewriten in order to use JWT instead. The Controllers also have been converted to JSON endpoints and all the views are now handled by React.
 The Models and Controllers names as the table names were kept in the original Brazilian Portuguese.
 For the frontend, both Brazilian Portuguese and English is available.
