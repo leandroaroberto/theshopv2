@@ -13,7 +13,7 @@ const TopMenu = ({lang, toggleLang}) => {
               <a href="#"
                 onClick={() => toggleLang(lang == 'BR' ? 'US' : 'BR')}
               >
-                {lang == 'BR' ? 'US' : 'BR'}
+                <img src={`icons/${lang == 'BR' ? 'united-states.png' : 'brazil.png'}`}/>
               </a>
             </li>
           </ul>

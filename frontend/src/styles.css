@@ -39,7 +39,7 @@ ul {
     height: 60px;
 }
 
-.navbar .logo {
+.navbar .logo a {
     font-size: x-large;
     font-weight: bold;
 }
@@ -47,12 +47,12 @@ ul {
 .navbar a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .navbar a i {
-    padding-right: 5px;
+    padding-right: 3px;
 }
 
 .navbar a:hover {
@@ -97,7 +97,8 @@ ul {
 }
 
 .header input {
-    width: 350px;
+    /*width: 350px;*/
+    width: 100%;
     font-size: 18px;
     border-radius: 3px;
     border-color: darkgrey;
@@ -169,7 +170,7 @@ ul {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 650px) {
     .header {
         max-height: 200px;
     }
@@ -193,5 +194,10 @@ ul {
 
     .header img {
         display: none;
+    }
+
+    .navbar .logo a {
+        font-size: large;
+        font-weight: bold;
     }
 }
