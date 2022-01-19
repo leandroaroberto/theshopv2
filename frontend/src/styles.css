@@ -126,6 +126,15 @@ ul {
     min-width: 200px;
 }
 
+.box p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-align: center;
+}
+
 .box img {
     width: 150px;
     height: 150px;
@@ -133,7 +142,8 @@ ul {
 }
 
 .box-image {
-    margin: auto 20px;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .box i {
@@ -161,6 +171,7 @@ ul {
     padding: 10px 20px;
     min-width: 100px;
     max-height: 40px;
+    text-align: center;
 }
 
 .category a {

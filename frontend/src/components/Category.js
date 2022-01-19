@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Category = ({categoryName}) => {
+const Category = ({id, nome,slug, foto, descricao}) => {
     return (
-        <div className="category">            
+        <div className="category" key={id}>            
             <div className="category-image">                
-                <a href="#">{categoryName ? categoryName : 'No Category'}</a>
+                <a href={`#?=${slug}`}>{nome ? nome : 'No Category'}</a>
             </div>
         </div> 
     )

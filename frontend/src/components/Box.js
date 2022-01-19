@@ -1,18 +1,24 @@
 import React from 'react'
 
-const Box = () => {
+const Box = ({id, nome, caracteristicas, qtde, preco, fotoDestacada}) => {
+    if (nome.length > 25){
+        nome = nome.substring(0,25) + '...'
+    }
+    if (caracteristicas.length > 80){
+        caracteristicas = caracteristicas.substring(0,80) + '...'
+    }
+
     return (
-       <div className="box">
-            <h2>Product 1</h2>
+       <div className="box" key={id}>
+            <h4>{nome}</h4>
             <div className="box-image">
-                <a href="#"><img src="img/1/cadeira.jpg" /></a>
+                <a href={`#?id=${id}`}><img src={`img/${id}/${fotoDestacada}`} /></a>
             </div>
             <p>
-                A more efficient way to lay out, align and distribute space among
-                items in a container
+                {caracteristicas ? caracteristicas : '-' }
             </p>
             <p className="price">
-              R$ 99,99
+              R$ {preco}
             </p>
         </div>         
     )
