@@ -3,10 +3,16 @@ import React from 'react'
 const Box = () => {
     return (
        <div className="box">
-            <h2><i className="fas fa-arrows-alt-v"></i> Alignment & Space</h2>
+            <h2>Product 1</h2>
+            <div className="box-image">
+                <img src="img/1/cadeira.jpg" />
+            </div>
             <p>
                 A more efficient way to lay out, align and distribute space among
                 items in a container
+            </p>
+            <p className="price">
+              R$ 99,99
             </p>
         </div>         
     )

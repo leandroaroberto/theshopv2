@@ -1,16 +1,20 @@
 import React from 'react'
 
-const TopMenu = () => {
+const TopMenu = ({lang, toggleLang}) => {
     return (
         <ul className="nav">
             <li>
-              <a href="#">Home</a>
+              <a href="#"><i className="fas fa-shopping-cart"></i>{lang == 'BR' ? 'Carrinho' : 'Cart'}</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#"><i className="fas fa-user"></i>Login</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#"
+                onClick={() => toggleLang(lang == 'BR' ? 'US' : 'BR')}
+              >
+                {lang == 'BR' ? 'US' : 'BR'}
+              </a>
             </li>
           </ul>
     )

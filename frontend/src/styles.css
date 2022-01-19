@@ -47,8 +47,12 @@ ul {
 .navbar a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+}
+
+.navbar a i {
+    padding-right: 5px;
 }
 
 .navbar a:hover {
@@ -73,7 +77,7 @@ ul {
 .header {
     background-color: #0151cc;
     color: #fff;
-    min-height: 400px;
+    min-height: 200px;
 }
 
 .header h1 {
@@ -83,7 +87,7 @@ ul {
 }
 
 .header img {
-    max-width: 400px;
+    max-width: 200px;
 }
 
 .header .container {
@@ -92,9 +96,20 @@ ul {
     justify-content: space-between;
 }
 
+.header input {
+    width: 350px;
+    font-size: 18px;
+    border-radius: 3px;
+    border-color: darkgrey;
+    border-width: 1px;
+    height: 35px;
+    padding-left: 10px;
+}
+
 .boxes .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .box {
@@ -105,10 +120,28 @@ ul {
     margin: 20px 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
     padding: 15px 20px;
+    max-width: 300px;
+    min-width: 200px;
+}
+
+.box img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.box-image {
+    margin: auto 20px;
 }
 
 .box i {
     margin-right: 10px;
+}
+
+.box .price {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
 }
 
 @media (max-width: 768px) {

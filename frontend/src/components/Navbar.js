@@ -2,12 +2,12 @@ import React from 'react'
 import TopMenu from './TopMenu'
 import Logo from './Logo'
 
-const Navbar = () => {
+const Navbar = ({lang, toggleLang }) => {
     return (
         <nav className="navbar">
         <div className="container">
             <Logo />
-            <TopMenu />
+            <TopMenu lang={lang} toggleLang={toggleLang}/>
         </div>
       </nav>
     )

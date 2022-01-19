@@ -1,15 +1,17 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({lang}) => {
     return (
         <header className="header">
         <div className="container">
           <div>
-            <h1>Flexbox Crash Course</h1>
+            <h1>{lang == 'BR' ? 'Encontre seu produto' : 'Find your product'}</h1>
+            <input type="text"/>
             <p>
-              This crash course was created by Brad Traversy to help you learn the
-              basics of flexbox. Flexbox is a very important and useful tool in
-              CSS.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type 
+              specimen book.
             </p>
           </div>
           <img src="https://traversymedia.com/images/grid.svg" alt="" />
