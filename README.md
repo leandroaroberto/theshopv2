@@ -10,7 +10,7 @@ This MVP contains the models below:
 
 -   Product categories
 -   Products
--   Shopping Chart
+-   Cart
 -   Client registration
 -   Address Registration
 -   Orders

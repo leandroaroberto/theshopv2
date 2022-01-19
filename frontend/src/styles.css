@@ -77,17 +77,17 @@ ul {
 .header {
     background-color: #0151cc;
     color: #fff;
-    min-height: 200px;
+    max-height: 150px;
 }
 
 .header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     line-height: 1.2;
 }
 
 .header img {
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .header .container {
@@ -104,6 +104,7 @@ ul {
     border-width: 1px;
     height: 35px;
     padding-left: 10px;
+    margin-bottom: 10px;
 }
 
 .boxes .container {
@@ -117,7 +118,7 @@ ul {
     background: #0a51cc;
     color: #fff;
     border-radius: 10px;
-    margin: 20px 10px;
+    margin: 5px 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
     padding: 15px 20px;
     max-width: 300px;
@@ -144,15 +145,53 @@ ul {
     font-size: large;
 }
 
+.categories .container {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.category {
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    margin: 5px 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    min-width: 100px;
+    max-height: 40px;
+}
+
+.category a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
+    .header {
+        max-height: 200px;
+    }
+
     .header .container {
         flex-direction: column;
         padding-top: 20px;
         text-align: center;
     }
 
+    .header h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1;
+    }
+
     .boxes .container {
         display: block;
         text-align: center;
+    }
+
+    .header img {
+        display: none;
     }
 }

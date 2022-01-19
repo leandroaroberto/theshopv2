@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Box from './components/Box'
+import Category from './components/Category'
 
 function App() {
 
@@ -16,6 +17,12 @@ function App() {
     <>
      <Navbar lang={lang} toggleLang={toggleLang}/>
       <Header lang={lang}/>
+      <section className="categories">
+        <div className="container">          
+          <Category />
+          <Category />       
+        </div>
+      </section>
       <section className="boxes">
         <div className="container">
           <Box/>
