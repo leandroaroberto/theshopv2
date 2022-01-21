@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const TopMenu = ({lang, toggleLang}) => {
     return (
@@ -7,7 +8,7 @@ const TopMenu = ({lang, toggleLang}) => {
               <a href="#"><i className="fas fa-shopping-cart"></i>{lang == 'BR' ? 'Carrinho' : 'Cart'}</a>
             </li>
             <li>
-              <a href="#"><i className="fas fa-user"></i>Login</a>
+              <Link to="/login"><i className="fas fa-user"></i>Login</Link>
             </li>
             <li>
               <a href="#"

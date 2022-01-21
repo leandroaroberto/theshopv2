@@ -13,5 +13,4 @@ const Navbar = ({lang, toggleLang }) => {
     )
 }
 
-
 export default Navbar;
