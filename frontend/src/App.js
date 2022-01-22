@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Cart from './pages/Cart'
 import NoMatch from './pages/NoMatch'
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
       <Routes>
           <Route path="/" element={<Home lang={lang} />}/>
           <Route path="/login" element={<Login lang={lang}/>} />
+          <Route path="/cart" element={<Cart lang={lang}/>} />
           <Route path="*" element={<NoMatch />} />        
       </Routes>
     </Router>

@@ -1,14 +1,20 @@
 import React from 'react'
 
-const Header = ({lang}) => {
+const Header = ({lang, headerBr , headerUs, showSearch = false, headerImage = ""}) => {
     return (
         <header className="header">
         <div className="container">
           <div>
-            <h1>{lang == 'BR' ? 'Encontre seu produto' : 'Find your product'}</h1>
-            <input type="text"/>
+            <h1>
+              {lang == 'BR' ? headerBr : headerUs}
+            </h1>
+            {
+              showSearch === true ? <input type="text"/> : ''
+            }            
           </div>
-          <img src="header/shopCart.png" alt="" />
+          {
+            headerImage ? <img src={`header/${headerImage}`} alt="" /> : ''
+          }          
         </div>        
       </header>
     )

@@ -10,8 +10,10 @@ function Home({lang}) {
 
   const prods = [
     { id : 1, 
-      nome : 'Cadeira de escritório', 
-      caracteristicas : 'Cadeira de escritório premium com encosto duplo', 
+      nomeBr : 'Cadeira de escritório', 
+      nomeUs : 'Office chair', 
+      caracteristicasBr : 'Cadeira de escritório premium com encosto duplo', 
+      caracteristicasUs : 'Office chair premium edition ', 
       qtde : 2, 
       preco : 1052.50, 
       fotoDestacada : 'cadeira.jpg', 
@@ -20,8 +22,10 @@ function Home({lang}) {
       updated_at : ''
     },
     { id : 2, 
-      nome : 'Cadeira gamer', 
-      caracteristicas : 'Cadeira de escritório premium gamer', 
+      nomeBr : 'Cadeira gamer', 
+      nomeUs : 'Gamer chair', 
+      caracteristicasBr : 'Cadeira de escritório premium gamer', 
+      caracteristicasUs : 'Game chair premium edition', 
       qtde : 1, 
       preco : 2000.00, 
       fotoDestacada : 'portaRetrato.jpg', 
@@ -30,8 +34,10 @@ function Home({lang}) {
       updated_at : ''
     },
     { id : 3, 
-      nome : 'Conjunto com 2 Cadeiras Gamer Premium Branca Base Madeira', 
-      caracteristicas : 'Altura 81 cm Largura 46 cm Profundidade 51 cm; Altura do assento ao chão 44 cm', 
+      nomeBr : 'Conjunto com 2 Cadeiras Gamer Premium Branca Base Madeira', 
+      nomeUs : 'Set of 2 Premium White Wood Base Gamer Chairs', 
+      caracteristicasBr : 'Altura 81 cm Largura 46 cm Profundidade 51 cm; Altura do assento ao chão 44 cm', 
+      caracteristicasUs : 'Height 81 cm Width 46 cm Depth 51 cm; Height from seat to floor 44 cm', 
       qtde : 20, 
       preco : 289.99, 
       fotoDestacada : 'poltrona3.jpg', 
@@ -44,20 +50,24 @@ function Home({lang}) {
   const categories = [
     {
       id : 1,
-      nome: 'Decoração',
-      slug: 'decoracao',
+      nomeBr: 'Decoração',
+      nomeUs: 'Decoration',
+      slug: 'decoration',
       foto: 'nopic.jpg',
-      descricao: 'Temos todos os móveis que você precisa para decorar sua casa, do jeito que você sempre sonhou.',
+      descricaoBr: 'Temos todos os móveis que você precisa para decorar sua casa, do jeito que você sempre sonhou.',
+      descricaoUs: 'We have everthing to decorate your space!',
       status: 1,
       created_at : '2022-01-19 17:42:00' ,
       updated_at : ''
     },
     {
       id : 2,
-      nome: 'Móveis',
-      slug: 'moveis',
+      nomeBr: 'Móveis',
+      nomeUs: 'Forniture',
+      slug: 'forniture',
       foto: 'nopic.jpg',
-      descricao: 'Oferecer móveis lindos para deixar seu cantinho cheio de bons momentos!',
+      descricaoBr: 'Oferecer móveis lindos para deixar seu cantinho cheio de bons momentos!',
+      descricaoUs: 'We have that furniture you always dreamed about!',
       status: 1,
       created_at : '2022-01-19 17:42:00' ,
       updated_at : ''
@@ -66,7 +76,13 @@ function Home({lang}) {
 
   return (
     <>     
-      <Header lang={lang}/>
+      <Header 
+        lang={lang} 
+        showSearch={true} 
+        headerImage="packages.png"
+        headerBr="Encontre seu produto"
+        headerUs="Find your product"
+      />
       <section className="categories">
         <div className="container">
           {
@@ -75,9 +91,12 @@ function Home({lang}) {
                 key={cat.id}
                 id={cat.id}
                 slug={cat.slug}
-                nome={cat.nome}
-                descricao={cat.descricao}
+                nomeBr={cat.nomeBr}
+                nomeUs={cat.nomeUs}
+                descricaoBr={cat.descricaoBr}
+                descricaoUs={cat.descricaoUs}
                 foto={cat.foto}
+                lang={lang}
               />
             ) )
           }
@@ -89,11 +108,14 @@ function Home({lang}) {
             prods.map((prod) => 
               <Box key={prod.id} 
                 id={prod.id} 
-                nome={prod.nome} 
-                caracteristicas={prod.caracteristicas} 
+                nomeBr={prod.nomeBr} 
+                nomeUs={prod.nomeUs} 
+                caracteristicasBr={prod.caracteristicasBr} 
+                caracteristicasUs={prod.caracteristicasUs} 
                 qtde={prod.qtde} 
                 preco={prod.preco} 
-                fotoDestacada={prod.fotoDestacada}                
+                fotoDestacada={prod.fotoDestacada}
+                lang={lang}                
               />    
             )
           }

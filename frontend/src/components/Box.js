@@ -1,21 +1,39 @@
 import React from 'react'
 
-const Box = ({id, nome, caracteristicas, qtde, preco, fotoDestacada}) => {
-    if (nome.length > 25){
-        nome = nome.substring(0,25) + '...'
+const Box = ({id, nomeBr, nomeUs, caracteristicasBr, caracteristicasUs, qtde, preco, fotoDestacada, lang}) => {
+    let caracteristicas = '-'
+    let nome = ''
+
+    if (lang == 'BR') {
+        if (nomeBr.length > 25)
+            nome = nomeBr.substring(0,25) + '...'        
+        else
+            nome = nomeBr
+        if (caracteristicasBr.length > 80)
+            caracteristicas = caracteristicasBr.substring(0,80) + '...'
+        else
+            caracteristicas = caracteristicasBr
     }
-    if (caracteristicas.length > 80){
-        caracteristicas = caracteristicas.substring(0,80) + '...'
+    else
+    {
+       if (nomeUs.length > 25)
+            nome = nomeUs.substring(0,25) + '...'
+        else
+            nome = nomeUs
+        if (caracteristicasUs.length > 80)
+            caracteristicas = caracteristicasUs.substring(0,80) + '...'
+        else
+            caracteristicas = caracteristicasUs        
     }
 
     return (
-       <div className="box" key={id}>
+       <div className="box" key={id}>           
             <h4>{nome}</h4>
             <div className="box-image">
-                <a href={`#?id=${id}`}><img src={`img/${id}/${fotoDestacada}`} /></a>
+                <a href={`/product/${id}`}><img src={`img/${id}/${fotoDestacada}`} /></a>
             </div>
             <p>
-                {caracteristicas ? caracteristicas : '-' }
+                {caracteristicas}
             </p>
             <p className="price">
               R$ {preco}

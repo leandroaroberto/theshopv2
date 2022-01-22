@@ -5,7 +5,7 @@ const TopMenu = ({lang, toggleLang}) => {
     return (
         <ul className="nav">
             <li>
-              <a href="#"><i className="fas fa-shopping-cart"></i>{lang == 'BR' ? 'Carrinho' : 'Cart'}</a>
+              <Link to="/cart"><i className="fas fa-shopping-cart"></i>{lang == 'BR' ? 'Carrinho' : 'Cart'}</Link>
             </li>
             <li>
               <Link to="/login"><i className="fas fa-user"></i>Login</Link>
@@ -14,7 +14,7 @@ const TopMenu = ({lang, toggleLang}) => {
               <a href="#"
                 onClick={() => toggleLang(lang == 'BR' ? 'US' : 'BR')}
               >
-                <img src={`icons/${lang == 'BR' ? 'united-states.png' : 'brazil.png'}`}/>
+                <img src={`/icons/${lang == 'BR' ? 'united-states.png' : 'brazil.png'}`}/>
               </a>
             </li>
           </ul>
