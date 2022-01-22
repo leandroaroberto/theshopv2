@@ -181,6 +181,29 @@ h5 {
     cursor: pointer;
 }
 
+.formBox {
+    text-align: center;
+    padding-top: 5px;
+}
+
+.formBox > div {
+    padding-top: 10px;
+}
+
+.formBox .button {
+    width: 100%;
+}
+
+.formBox .textField {
+    width: 100%;
+}
+
+.formLogin .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 @media (max-width: 650px) {
     .header {
         max-height: 200px;
