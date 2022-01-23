@@ -83,6 +83,7 @@ function Home({lang}) {
         headerBr="Encontre seu produto"
         headerUs="Find your product"
       />
+      {categories.length > 0 ? (
       <section className="categories">
         <div className="container">
           {
@@ -101,7 +102,10 @@ function Home({lang}) {
             ) )
           }
         </div>
-      </section>
+      </section>)
+      :
+      ''
+        }
       <section className="boxes">
         <div className="container">
           {
