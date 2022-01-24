@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CategoriaController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,3 +25,6 @@ use App\Http\Controllers\ProdutoController;
 Route::get('/products/{id}', [ProdutoController::class, 'produtoInfo']);
 Route::get('/products', [ProdutoController::class, 'index']);
 Route::post('/products/search', [ProdutoController::class, 'buscarProdutos']);
+
+//Categories
+Route::post('/categories', [CategoriaController::class, 'getCategories']);

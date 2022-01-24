@@ -17,8 +17,8 @@ class ProdutoFactory extends Factory
         return [
             'nomeBr' => $this->faker->name,
             'nomeUs' => $this->faker->name,
-            'caracteristicasBr' => $this->faker->text,
-            'caracteristicasUs' => $this->faker->text,
+            'caracteristicasBr' => $this->faker->paragraph(2),
+            'caracteristicasUs' => $this->faker->paragraph(1),
             'qtde' => $this->faker->randomDigit,
             'preco' => $this->faker->randomFloat(2, 1, 200),            
             'created_at' => now()
