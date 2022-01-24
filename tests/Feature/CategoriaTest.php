@@ -20,23 +20,15 @@ class CategoriaTest extends TestCase
      */
     public function testShouldShowAllCategories(){        
 
-        $this->post('/api/categories/', ['lang' => 'BR'])
+        $this->get('/api/categories/', [])
             ->assertStatus(200)
             ->assertJsonCount(0, $key = null);
-
-        $this->post('/api/categories/', ['lang' => 'US'])
-            ->assertStatus(200)
-            ->assertJsonCount(0, $key = null);
-
+        
         $categoria = Categoria::factory()->count(5)->create();            
         
-        $this->post('/api/categories/', ['lang' => 'BR'])
+        $this->get('/api/categories/', [])
             ->assertStatus(200)
-            ->assertJsonCount(5, $key = null);
-
-        $this->post('/api/categories/', ['lang' => 'US'])
-            ->assertStatus(200)
-            ->assertJsonCount(5, $key = null);       
+            ->assertJsonCount(5, $key = null);        
     }
     
 }

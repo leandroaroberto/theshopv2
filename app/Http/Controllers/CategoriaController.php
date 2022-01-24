@@ -9,11 +9,9 @@ use App\Models\Categoria;
 class CategoriaController extends Controller
 {    
 
-    public function getCategories(Request $request)
-    {
-        $orderByField = $request->input('lang') == 'Us' ? 'nomeUs' : 'nomeBr';        
-        $categorias = Categoria::where('status', 1)
-               ->orderBy($orderByField, 'desc')
+    public function getCategories()
+    {        
+        $categorias = Categoria::where('status', 1)               
                ->get();
         return response()->json($categorias, 200);      
     }

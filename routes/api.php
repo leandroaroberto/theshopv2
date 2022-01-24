@@ -27,4 +27,4 @@ Route::get('/products', [ProdutoController::class, 'index']);
 Route::post('/products/search', [ProdutoController::class, 'buscarProdutos']);
 
 //Categories
-Route::post('/categories', [CategoriaController::class, 'getCategories']);
+Route::get('/categories', [CategoriaController::class, 'getCategories']);

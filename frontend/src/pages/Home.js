@@ -9,6 +9,7 @@ import axios from 'axios'
 function Home({lang}) {
 
   const [prods, setProds] = useState([])
+  const [categories, setCategories] = useState([])
 
   useEffect(() => {
     axios.get("http://localhost:8000/api/products/")
@@ -17,32 +18,12 @@ function Home({lang}) {
     });
   }, [])
 
-  const categories = [
-    {
-      id : 1,
-      nomeBr: 'Decoração',
-      nomeUs: 'Decoration',
-      slug: 'decoration',
-      foto: 'nopic.jpg',
-      descricaoBr: 'Temos todos os móveis que você precisa para decorar sua casa, do jeito que você sempre sonhou.',
-      descricaoUs: 'We have everthing to decorate your space!',
-      status: 1,
-      created_at : '2022-01-19 17:42:00' ,
-      updated_at : ''
-    },
-    {
-      id : 2,
-      nomeBr: 'Móveis',
-      nomeUs: 'Forniture',
-      slug: 'forniture',
-      foto: 'nopic.jpg',
-      descricaoBr: 'Oferecer móveis lindos para deixar seu cantinho cheio de bons momentos!',
-      descricaoUs: 'We have that furniture you always dreamed about!',
-      status: 1,
-      created_at : '2022-01-19 17:42:00' ,
-      updated_at : ''
-    }
-  ]
+  useEffect(() => {
+    axios.get("http://localhost:8000/api/categories/")
+      .then((response) => {
+        setCategories(response.data);        
+    });
+  }, [])
 
   return (
     <>     
