@@ -15,8 +15,10 @@ class CreateProdutosTable extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome',255);
-            $table->text('caracteristicas')->nullable();
+            $table->string('nomeBr',255);
+            $table->string('nomeUs',255);
+            $table->text('caracteristicasBr')->nullable();
+            $table->text('caracteristicasUs')->nullable();
             $table->integer('qtde')->default(0);
             $table->float('preco', 8, 2);
             $table->string('fotoDestacada',255)->nullable()->default('nopic.jpg');

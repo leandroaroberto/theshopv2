@@ -18,16 +18,20 @@ class CategoriasTableSeeder extends Seeder
 
         DB::table('categorias')->insert([
           'id' => 1,
-           'nome'=>"Decoração",
-           'slug'=>"decoracao",
-           'descricao'=> " Temos todos os móveis que você precisa para decorar sua casa, do jeito que você sempre sonhou.",
-            'created_at' => date("Y-m-d h:i:s"),
+          'nomeBr'=>"Decoração",
+          'nomeUs'=>"Decoration",
+          'slug'=>"decoracao",
+          'descricaoBr'=> " Temos todos os móveis que você precisa para decorar sua casa, do jeito que você sempre sonhou.",
+          'descricaoUs'=> "We have everthing to decorate your space!",
+          'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('categorias')->insert([
           'id' => 2,
-          'nome'=>"Móveis",
+          'nomeBr'=>"Móveis",
+          'nomeUs'=>"Forniture",
           'slug'=>"moveis",
-          'descricao'=> "Oferecer móveis lindos para deixar seu cantinho cheio de bons momentos!",
+          'descricaoBr'=> "Oferecer móveis lindos para deixar seu cantinho cheio de bons momentos!",
+          'descricaoUs'=> "We have that furniture you always dreamed about!",
           'created_at' => date("Y-m-d h:i:s"),
         ]);
     }

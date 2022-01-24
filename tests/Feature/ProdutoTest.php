@@ -40,13 +40,13 @@ class ProdutoTest extends TestCase
            
         Produto::factory()->create([
             'id' => 25,
-            'nome' => 'Tv 50 polegadas',
+            'nomeBr' => 'Tv 50 polegadas',
         ]);
 
         $this->get('/api/products/25', [])
             ->assertStatus(200)
             ->assertJson([
-                'nome' => 'Tv 50 polegadas',
+                'nomeBr' => 'Tv 50 polegadas',
             ]);
     }
 
@@ -56,23 +56,34 @@ class ProdutoTest extends TestCase
      * @return void
      */
     public function testShouldSearchByProductName(){
-       $this->post('/api/products/search', ['buscarpor' => 'tv 50'])
+       $this->post('/api/products/search', ['buscarpor' => 'tv 50', 'lang' => 'BR'])
             ->assertStatus(404)
             ->assertJsonCount(0, $key = null);
         
         Produto::factory()->create([            
-            'nome' => 'Tv 50 polegadas',
+            'nomeBr' => 'Tv 50 polegadas',
+            'nomeUs' => '50 inches Tv',
+
         ]);
         Produto::factory()->create([            
-            'nome' => 'Tv 32 polegadas LED',
+            'nomeBr' => 'Tv 32 polegadas LED',
+            'nomeUs' => '32 inches LED Tv',
         ]);
         Produto::factory()->count(10)->create(); 
 
-        $this->post('/api/products/search', ['buscarpor' => 'tv'])
+        $this->post('/api/products/search', ['buscarpor' => 'tv', 'lang' => 'BR'])
             ->assertStatus(200)
             ->assertJsonCount(2, $key = null);
 
-        $this->post('/api/products/search', ['buscarpor' => 'tv 50'])
+        $this->post('/api/products/search', ['buscarpor' => 'tv', 'lang' => 'US'])
+            ->assertStatus(200)
+            ->assertJsonCount(2, $key = null);
+
+        $this->post('/api/products/search', ['buscarpor' => 'tv 50', 'lang' => 'BR'])
+            ->assertStatus(200)
+            ->assertJsonCount(1, $key = null);
+
+        $this->post('/api/products/search', ['buscarpor' => '50 inches', 'lang' => 'US'])
             ->assertStatus(200)
             ->assertJsonCount(1, $key = null);
     }

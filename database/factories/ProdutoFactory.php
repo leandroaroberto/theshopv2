@@ -15,8 +15,10 @@ class ProdutoFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->name,
-            'caracteristicas' => $this->faker->text,
+            'nomeBr' => $this->faker->name,
+            'nomeUs' => $this->faker->name,
+            'caracteristicasBr' => $this->faker->text,
+            'caracteristicasUs' => $this->faker->text,
             'qtde' => $this->faker->randomDigit,
             'preco' => $this->faker->randomFloat(2, 1, 200),            
             'created_at' => now()

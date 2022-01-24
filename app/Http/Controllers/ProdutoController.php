@@ -24,7 +24,12 @@ class ProdutoController extends Controller
     public function buscarProdutos(Request $request)
     {
         $prod = $request->input('buscarpor');
-        $produtos = Produto::where("nome","like","%$prod%")->get();
+        $lang = $request->input('lang');
+        if ($lang == 'BR')
+            $produtos = Produto::where("nomeBr","like","%$prod%")->get();
+        else
+            $produtos = Produto::where("nomeUs","like","%$prod%")->get();
+            
         if (count($produtos) > 0 )            
             return response()->json($produtos, 200);
         else

@@ -19,21 +19,23 @@ class ProdutosTableSeeder extends Seeder
         //Produto 01
         DB::table('produtos')->insert([
         'id'=> 1,
-            'nome'=>"Conjunto com 2 Cadeiras Eames Premium Branca Base Madeira",
-            'caracteristicas'=>"Altura 81 cm Largura 46 cm Profundidade 51 cm; Altura do assento ao chão 44 cm",
+            'nomeBr'=>"Conjunto com 2 Cadeiras Eames Premium Branca Base Madeira",
+            'nomeUs'=>"Set of 2 chairs Eames premium white with a wood base",
+            'caracteristicasBr'=>"Altura 81 cm Largura 46 cm Profundidade 51 cm; Altura do assento ao chão 44 cm",
+            'caracteristicasUs'=>"Height 81 cm width 46 cm Deep 51 cm; Height from base 44 cm",
             'qtde'=> 20,
             'preco'=> 289.99,
-            'fotoDestacada' => '1/cadeira.jpg',
+            'fotoDestacada' => 'cadeira.jpg',
             'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('produtosximagem')->insert([
             'produtos_id'=> 1,
-            'foto'=>"1/cadeira.jpg",
+            'foto'=>"cadeira.jpg",
             'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('produtosximagem')->insert([
             'produtos_id'=> 1,
-            'foto'=>"1/cadeira2.jpg",
+            'foto'=>"cadeira2.jpg",
             'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('produtosxcategorias')->insert([
@@ -51,16 +53,18 @@ class ProdutosTableSeeder extends Seeder
         //Produto 02
         DB::table('produtos')->insert([
         'id'=> 2,
-            'nome'=>"Porta retrato 35,5X27cm Imbuia",
-            'caracteristicas'=>"Painel 35,5X27cm Quattro Ritratto Imbuia Com Natural",
+            'nomeBr'=>"Porta retrato 35,5X27cm Imbuia",
+            'nomeUs'=>"Picture frame 35,5X27cm Imbuia",
+            'caracteristicasBr'=>"Painel 35,5X27cm Quattro Ritratto Imbuia Com Natural",
+            'caracteristicasUs'=>"Panel 35,5X27cm Quattro Ritratto Imbuia Natural",
             'qtde'=> 6,
             'preco'=> 47.99,
-            'fotoDestacada' => '2/portaRetrato.jpg',
+            'fotoDestacada' => 'portaRetrato.jpg',
             'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('produtosximagem')->insert([
             'produtos_id'=> 2,
-            'foto'=>"2/portaRetrato.jpg",
+            'foto'=>"portaRetrato.jpg",
             'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('produtosxcategorias')->insert([
@@ -73,26 +77,28 @@ class ProdutosTableSeeder extends Seeder
         //Produto 03
         DB::table('produtos')->insert([
         'id'=> 3,
-            'nome'=>"Poltrona de Massagem Reclinável Louisiana Couro Sintético Preto Rivatti",
-            'caracteristicas'=>"A Poltrona de Massagem Louisiana é exatamente aquilo que você precisa após um cansativo dia de trabalho.",
+            'nomeBr'=>"Poltrona de Massagem Reclinável Louisiana Couro Sintético Preto Rivatti",
+            'nomeUs'=>"Reclining Massage Chair Louisiana Synthetic Leather Black Rivatti",
+            'caracteristicasBr'=>"A Poltrona de Massagem Louisiana é exatamente aquilo que você precisa após um cansativo dia de trabalho.",
+            'caracteristicasUs'=>"The Louisiana Massage Chair is just what you need after a tiring day at work.",
             'qtde'=> 2,
             'preco'=> 1349.99,
-            'fotoDestacada' => '3/poltrona3.jpg',
+            'fotoDestacada' => 'poltrona3.jpg',
             'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('produtosximagem')->insert([
             'produtos_id'=> 3,
-            'foto'=>"3/poltrona.jpg",
+            'foto'=>"poltrona.jpg",
             'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('produtosximagem')->insert([
             'produtos_id'=> 3,
-            'foto'=>"3/poltrona2.jpg",
+            'foto'=>"poltrona2.jpg",
             'created_at' => date("Y-m-d h:i:s"),
         ]);
         DB::table('produtosximagem')->insert([
             'produtos_id'=> 3,
-            'foto'=>"3/poltrona3.jpg",
+            'foto'=>"poltrona3.jpg",
             'created_at' => date("Y-m-d h:i:s"),
         ]);
 
