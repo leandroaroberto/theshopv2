@@ -95,7 +95,7 @@ function Home({lang}) {
       </section>
       <section>
         <div className="container">
-          <ContentDialog prodIdSelected={prodIdSelected} prods={prods} handleClose={handleClose} open={open}/>
+          <ContentDialog prodIdSelected={prodIdSelected} prods={prods} handleClose={handleClose} open={open} lang={lang}/>
         </div>
       </section>
     </>
