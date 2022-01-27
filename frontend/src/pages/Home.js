@@ -3,13 +3,25 @@ import React, {useState, useEffect} from 'react';
 import Header from '../components/Header'
 import Box from '../components/Box'
 import Category from '../components/Category'
+import ContentDialog from '../components/ContentDialog'
 
 import axios from 'axios'
 
 function Home({lang}) {
 
   const [prods, setProds] = useState([])
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([])   
+  const [open, setOpen] = useState(false);
+  const [prodIdSelected, setProdIdSelected] = useState(0);
+
+  const handleClickOpen = (id) => {
+    setProdIdSelected(id);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     axios.get("http://localhost:8000/api/products/")
@@ -71,12 +83,20 @@ function Home({lang}) {
                     qtde={prod.qtde} 
                     preco={prod.preco} 
                     fotoDestacada={prod.fotoDestacada}
-                    lang={lang}                
+                    lang={lang}
+                    handleClickOpen={handleClickOpen} 
+                    handleClose={handleClose}
+                    open={open}                
                   />    
                 )
           ) : lang == 'BR' ? 'Não existem produtos cadastrados.' : 'There are no products available.'
           }
           </div>
+      </section>
+      <section>
+        <div className="container">
+          <ContentDialog prodIdSelected={prodIdSelected} prods={prods} handleClose={handleClose} open={open}/>
+        </div>
       </section>
     </>
   );

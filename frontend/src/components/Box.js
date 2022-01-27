@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Box = ({id, nomeBr, nomeUs, caracteristicasBr, caracteristicasUs, qtde, preco, fotoDestacada, lang}) => {
+const Box = ({id, nomeBr, nomeUs, caracteristicasBr, caracteristicasUs, qtde, preco, fotoDestacada, lang, handleClickOpen, handleClose, open}) => {
     let caracteristicas = '-'
     let nome = ''
 
@@ -26,11 +26,16 @@ const Box = ({id, nomeBr, nomeUs, caracteristicasBr, caracteristicasUs, qtde, pr
             caracteristicas = caracteristicasUs        
     }
 
+    const handleContentDialogOpen = (e) => {
+        e.preventDefault()
+        handleClickOpen(id)
+    }
+
     return (
        <div className="box" key={id}>           
             <h4>{nome}</h4>
             <div className="box-image">
-                <a href={`/product/${id}`}><img src={`img/${id}/${fotoDestacada}`} /></a>
+                <a href={`/product/${id}`}><img src={`img/${id}/${fotoDestacada}`} onClick={handleContentDialogOpen}/></a>
             </div>
             <p>
                 {caracteristicas}
