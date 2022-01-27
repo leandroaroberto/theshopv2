@@ -6,9 +6,23 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-export default function ContentDialog({prodIdSelected, prods, handleClose, open, lang}) {
-  
+export default function ContentDialog({prodIdSelected, prods, handleClose, open, lang}) { 
   const selectedProd = prods.filter((prod) => prod.id == prodIdSelected)
+  const [nome, setNome] = useState('')
+  const [descricao, setDescricao] = useState('')
+  
+  useEffect(() => {      
+    if (lang == 'BR'){
+      setNome(selectedProd.length > 0 ? selectedProd[0].nomeBr : '')
+      setDescricao(selectedProd.length > 0 ? selectedProd[0].caracteristicasBr : '')             
+    }
+    else
+    {      
+      setNome(selectedProd.length > 0 ? selectedProd[0].nomeUs : '')
+      setDescricao(selectedProd.length > 0 ? selectedProd[0].caracteristicasUs : '')
+    }    
+  }, [selectedProd])
+  
   
   return (
     <div>      
@@ -19,15 +33,14 @@ export default function ContentDialog({prodIdSelected, prods, handleClose, open,
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {lang == 'BR' ? selectedProd[0].nomeBr : selectedProd[0].nomeUs}
+          {nome}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            {lang == 'BR' ? selectedProd[0].caracteristicasBr : selectedProd[0].caracteristicasUs}
+            {descricao}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          {/* <Button onClick={handleClose}>Disagree</Button> */}
           <Button onClick={handleClose} autoFocus>
             {lang == 'BR' ? 'Fechar' : 'Close'}
           </Button>
