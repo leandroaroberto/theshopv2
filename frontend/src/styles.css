@@ -34,7 +34,7 @@ ul {
 }
 
 .navbar {
-    background: #3474e6;
+    background: #10021c;
     color: #fff;
     height: 60px;
 }
@@ -75,7 +75,7 @@ ul {
 }
 
 .header {
-    background-color: #0151cc;
+    background-color: #21053f;
     color: #fff;
     max-height: 150px;
 }
@@ -97,7 +97,6 @@ ul {
 }
 
 .header input {
-    /*width: 350px;*/
     width: 100%;
     font-size: 18px;
     border-radius: 3px;
@@ -116,9 +115,9 @@ ul {
 
 .box {
     flex: 1;
-    background: #0a51cc;
-    color: #fff;
-    border-radius: 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 5px;
     margin: 5px 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
     padding: 15px 20px;
@@ -138,7 +137,7 @@ h5 {
 .box img {
     width: 150px;
     height: 150px;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 .box-image {
@@ -204,6 +203,34 @@ h5 {
     flex-wrap: wrap;
 }
 
+.dialog {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.dialog img {
+    max-width: 320px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    margin: 10px;
+}
+
+.dialog p {
+    margin: 10px;
+}
+
+.dialog strong {
+    font-size: x-large;
+}
+
+.button {
+    background-color: #3f2378 !important;
+    color: #fff !important;
+}
+
 @media (max-width: 650px) {
     .header {
         max-height: 200px;
@@ -233,5 +260,15 @@ h5 {
     .navbar .logo a {
         font-size: large;
         font-weight: bold;
+    }
+
+    .dialog {
+        display: block;
+        text-align: center;
+    }
+
+    .dialog img {
+        max-width: 80%;
+        max-height: 150px;
     }
 }
