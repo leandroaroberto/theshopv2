@@ -104,3 +104,8 @@ The Shop V2 uses the same structure as first version.
 ## Screenshots
 
 <img src="https://github.com/leandroqa/theshopv2/blob/main/docs/screenShots/indexPagePTBR.png" alt="Index page PTBR">
+<img src="https://github.com/leandroqa/theshopv2/blob/main/docs/screenShots/indexPageUS.png" alt="Index page US">
+<img src="https://github.com/leandroqa/theshopv2/blob/main/docs/screenShots/indexProductPTBR.png" alt="Index product PTBR">
+<img src="https://github.com/leandroqa/theshopv2/blob/main/docs/screenShots/indexProductUS.png" alt="Index product US">
+<img src="https://github.com/leandroqa/theshopv2/blob/main/docs/screenShots/loginPagePTBR.png" alt="Login page PTBR">
+<img src="https://github.com/leandroqa/theshopv2/blob/main/docs/screenShots/loginPageUS.png" alt="Login page US">
